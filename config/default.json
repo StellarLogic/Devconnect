@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb://localhost/Brad",
+  "jwtToken": "mysecrettoken",
+  "githubClientId": "Iv1.0982cf9083aa3789",
+  "githubSecret": "72ca9b4ef1ddd8139b8e6bec0e84edac3be7e5a8"
+}
