@@ -25,7 +25,7 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-router.get("/all", async (req, res) => {
+router.get("/", async (req, res) => {
   const errors = {};
 
   try {
@@ -125,7 +125,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/user/:user_id", async (req, res) => {
+router.get("user/:user_id", async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.params.user_id,
