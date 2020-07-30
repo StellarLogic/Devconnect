@@ -35,9 +35,12 @@ router.post(
 
 router.get("/", auth, async (req, res) => {
   try {
-    const posts = await Post.find({ user: req.user.id }).sort({ date: -1 });
+    // const posts = await Post.find({ user: req.user.id }).sort({ date: -1 });
+    const posts = await Post.find();
 
+    //
     return res.send(posts);
+    // return res.send(posts);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -83,6 +86,7 @@ router.delete("/:id", auth, async (req, res) => {
 });
 
 router.put("/like/:id", auth, async (req, res) => {
+  console.log(req.params.id);
   try {
     const post = await Post.findById(req.params.id);
 
